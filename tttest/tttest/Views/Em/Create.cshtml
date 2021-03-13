@@ -1,0 +1,54 @@
+﻿@model tttest.Models.Empolyee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>สร้าง</h1>
+
+<h4>พนักงาน</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label"> ชื่อ- นามสกุล</label>
+                <input asp-for="Employname" class="form-control" />
+                <span asp-validation-for="Employname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">ที่อยู่</label>
+                <input asp-for="EmployAdress" class="form-control" />
+                <span asp-validation-for="EmployAdress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">ตำแหน่ง</label>
+                <input asp-for="department" class="form-control" />
+                <span asp-validation-for="department" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                   
+                </label>
+                <input class="form-check-input" asp-for="status" /> @Html.DisplayNameFor(model => model.status)
+            </div>
+            <div class="form-group">
+                <label class="control-label">วันที่เข้า</label>
+                <input asp-for="dateofb" class="form-control" />
+                <span asp-validation-for="dateofb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="สร้าง" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
